@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/icon/oplib.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Open Library</title>
+  </head>
+
+  <body onload="jamSekarang()">
+    <header>
+      <nav
+        class="navbar is-fixed-top is-white"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img
+              src="./assets/icon/oplib.png"
+              alt="Open Library Logo"
+              style="max-height: 55px"
+              class="py-2 pl-2"
+            />
+            <h1 class="title is-5">Open Library</h1>
+          </a>
+
+          <a
+            class="navbar-burger my-2"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+            id="burger"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="navbar-menu" id="nav-links">
+          <div class="navbar-start">
+            <a href="#" class="navbar-item has-text-dark">Home</a>
+            <a href="#" class="navbar-item has-text-grey">About</a>
+            <a href="#" class="navbar-item has-text-grey">Contact</a>
+          </div>
+          <div class="navbar-end pr-4">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="#" class="button is-primary">Login</a>
+                <a href="#" class="button is-warning">Register</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero is-halfheight is-dark has-background mt-6">
+        <img
+          src="./assets/images/background.jpg"
+          alt=""
+          class="hero-background is-transparent"
+        />
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-2">Selamat Datang di Open Library</h1>
+            <h3 class="subtitle">Cari cepat koleksi dari Katalog Kami :</h3>
+            <div class="columns is-vcentered is-centered">
+              <div class="column is-half">
+                <div class="control has-icons-right">
+                  <form action="#" id="search">
+                    <input
+                      class="input"
+                      id="searchText"
+                      type="search"
+                      placeholder="Masukkan Kata Kunci"
+                      name="search"
+                    />
+                    <span
+                      class="icon is-right is-clickable"
+                      id="searchIcon"
+                      onclick="searchClick()"
+                    >
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </form>
+                </div>
+              </div>
+              <a href="#" class="button is-primary" id="advancedSearch"
+                >Advanced Search</a
+              >
+
+              <div class="modal has-text-dark">
+                <div class="modal-background" onclick="closeModal()"></div>
+                <div class="modal-card has-background-white search-modal">
+                  <header class="modal-card-head">
+                    <p class="modal-card-title judul p-0">Pencarian Lanjutan</p>
+                    <button
+                      class="modal-close is-large"
+                      aria-label="close"
+                      onclick="closeModal()"
+                    ></button>
+                  </header>
+                  <section class="modal-card-body container">
+                    <h2>HELLO</h2>
+                  </section>
+
+                  <footer class="modal-card-foot is-flex-direction-column">
+                    <div class="buttons">
+                      <button class="button is-success">Cari</button>
+                      <button class="button is-danger" onclick="closeModal()">
+                        Batal
+                      </button>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <div class="tabs is-centered is-medium is-size-7-mobile is-boxed">
+            <div class="container">
+              <ul>
+                <li class="is-active" data-target="tab-home">
+                  <a>
+                    <span class="icon is-small">
+                      <i class="fas fa-home" aria-hidden="true"></i>
+                    </span>
+                    <span>Open Library</span>
+                  </a>
+                </li>
+                <li data-target="tab-katalog">
+                  <a>
+                    <span class="icon is-small">
+                      <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
+                    <span>Katalog</span>
+                  </a>
+                </li>
+                <li data-target="tab-informasi">
+                  <a>
+                    <span class="icon is-small">
+                      <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    </span>
+                    <span>Informasi</span>
+                  </a>
+                </li>
+                <li data-target="tab-layanan">
+                  <a>
+                    <span class="icon is-small">
+                      <i
+                        class="fas fa-hand-holding-heart"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                    <span>Layanan</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="tab-contents" class="container px-5">
+        <section id="tab-home" class="pb-5">
+          <div class="container is-widescreen">
+            <h1 class="is-size-1 has-text-centered">Home!</h1>
+            <p class="has-text-centered">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
+              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
+              tempore animi exercitationem illum? Quos officiis magnam quae eius
+              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
+              odio libero totam quod labore! Id provident sit impedit debitis a,
+              est natus dolore vitae, deserunt rerum iure numquam cumque non?
+              Beatae numquam consectetur commodi aspernatur eaque dolorum
+              accusantium porro voluptatum perferendis? Sint dolor tempora
+              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
+              voluptates sint. Nam aspernatur pariatur nihil maiores similique
+              facilis ipsum?
+            </p>
+          </div>
+        </section>
+        <section id="tab-katalog" class="pb-5 is-hidden">
+          <div class="container is-widescreen">
+            <h1 class="is-size-1 has-text-centered">Katalog!</h1>
+            <p class="has-text-centered">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
+              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
+              tempore animi exercitationem illum? Quos officiis magnam quae eius
+              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
+              odio libero totam quod labore! Id provident sit impedit debitis a,
+              est natus dolore vitae, deserunt rerum iure numquam cumque non?
+              Beatae numquam consectetur commodi aspernatur eaque dolorum
+              accusantium porro voluptatum perferendis? Sint dolor tempora
+              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
+              voluptates sint. Nam aspernatur pariatur nihil maiores similique
+              facilis ipsum?
+            </p>
+          </div>
+        </section>
+        <section id="tab-informasi" class="pb-5 is-hidden">
+          <div class="container is-widescreen">
+            <h1 class="is-size-1 has-text-centered">Informasi!</h1>
+            <p class="has-text-centered">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
+              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
+              tempore animi exercitationem illum? Quos officiis magnam quae eius
+              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
+              odio libero totam quod labore! Id provident sit impedit debitis a,
+              est natus dolore vitae, deserunt rerum iure numquam cumque non?
+              Beatae numquam consectetur commodi aspernatur eaque dolorum
+              accusantium porro voluptatum perferendis? Sint dolor tempora
+              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
+              voluptates sint. Nam aspernatur pariatur nihil maiores similique
+              facilis ipsum?
+            </p>
+          </div>
+        </section>
+        <section id="tab-layanan" class="pb-5 is-hidden">
+          <div class="container is-widescreen">
+            <h1 class="is-size-1 has-text-centered">Layanan!</h1>
+            <p class="has-text-centered">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
+              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
+              tempore animi exercitationem illum? Quos officiis magnam quae eius
+              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
+              odio libero totam quod labore! Id provident sit impedit debitis a,
+              est natus dolore vitae, deserunt rerum iure numquam cumque non?
+              Beatae numquam consectetur commodi aspernatur eaque dolorum
+              accusantium porro voluptatum perferendis? Sint dolor tempora
+              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
+              voluptates sint. Nam aspernatur pariatur nihil maiores similique
+              facilis ipsum?
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer py-4 has-background-dark has-text-white">
+      <div class="content columns">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+
+      <div class="has-text-centered">
+        <p>
+          <span id="jam" class="is-size-4"></span>
+        </p>
+        <p>
+          <span id="tanggal" class="is-size-5"></span>
+        </p>
+        <p class="is-size-7">
+          &copy;
+          <span id="year"></span> Open Library | Telkom University | Frontpage
+          by chrisnaadhi
+        </p>
+      </div>
+    </footer>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>
