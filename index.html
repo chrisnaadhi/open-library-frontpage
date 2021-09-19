@@ -25,7 +25,7 @@
         aria-label="main navigation"
       >
         <div class="navbar-brand">
-          <a class="navbar-item">
+          <a class="navbar-item" href="#">
             <img
               src="./assets/icon/oplib.png"
               alt="Open Library Logo"
@@ -50,20 +50,60 @@
 
         <div class="navbar-menu" id="nav-links">
           <div class="navbar-start">
-            <a href="#" class="navbar-item has-text-dark">Home</a>
-            <a href="#" class="navbar-item has-text-grey">About</a>
-            <a href="#" class="navbar-item has-text-grey">Contact</a>
+            <a href="#" class="navbar-item has-text-dark">Beranda</a>
+            <a href="#" class="navbar-item has-text-grey">Tentang Kami</a>
+            <a href="#" class="navbar-item has-text-grey">Kontak</a>
           </div>
           <div class="navbar-end pr-4">
             <div class="navbar-item">
               <div class="buttons">
-                <a href="#" class="button is-primary">Login</a>
+                <a href="#" class="button is-primary" id="loginBtn">Login</a>
                 <a href="#" class="button is-warning">Register</a>
               </div>
             </div>
           </div>
         </div>
       </nav>
+      <div class="modal px-4" id="modalLogin">
+        <div class="modal-background" onclick="closeModalLogin()"></div>
+        <div class="modal-card has-background-white">
+          <header class="modal-card-head">
+            <p class="modal-card-title has-text-centered">Login</p>
+            <button class="delete" aria-label="close" onclick="closeModalLogin()"></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="Username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field is-grouped is-pulled-right">
+              <p class="control">
+                <button class="button is-success">
+                  Login
+                </button>
+              </p>
+              <p class="control">
+                <button class="button is-danger is-outlined" onclick="closeModalLogin()">
+                  Keluar
+                </button>
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -75,8 +115,10 @@
         />
         <div class="hero-body">
           <div class="container has-text-centered">
-            <h1 class="title is-2">Selamat Datang di Open Library</h1>
-            <h3 class="subtitle">Cari cepat koleksi dari Katalog Kami :</h3>
+            <h1 class="title is-1 is-size-2-mobile">Selamat Datang di Open Library</h1>
+            <h3 class="subtitle is-size-6-mobile">
+              Cari cepat koleksi dari Katalog Kami :
+            </h3>
             <div class="columns is-vcentered is-centered">
               <div class="column is-half">
                 <div class="control has-icons-right">
@@ -98,29 +140,89 @@
                   </form>
                 </div>
               </div>
-              <a href="#" class="button is-primary" id="advancedSearch"
+              <a href="#" class="button is-info mr-1" onclick="searchClick()">Search</a>
+              <a href="#" class="button is-warning ml-1 is-outlined" id="advancedSearch"
                 >Advanced Search</a
               >
 
-              <div class="modal has-text-dark">
-                <div class="modal-background" onclick="closeModal()"></div>
+              <div class="modal has-text-dark" id="advSearch">
+                <div class="modal-background" onclick="closeModalAdvSearch()"></div>
                 <div class="modal-card has-background-white search-modal">
                   <header class="modal-card-head">
-                    <p class="modal-card-title judul p-0">Pencarian Lanjutan</p>
+                    <p class="modal-card-title judul p-0">Pencarian Spesifik</p>
                     <button
                       class="modal-close is-large"
                       aria-label="close"
-                      onclick="closeModal()"
+                      onclick="closeModalAdvSearch()"
                     ></button>
                   </header>
-                  <section class="modal-card-body container">
-                    <h2>HELLO</h2>
+                  <section class="modal-card-body">
+                    <form action="" class="form">
+                      <div class="field">
+                        <label for="judul" class="label has-text-left">Judul :</label>
+                        <div class="control">
+                          <input type="text" class="input" placeholder="Judul Koleksi yang ingin dicari">
+                        </div>
+                      </div>
+                      <div class="columns is-mobile mb-0">
+                        <label for="jenis-koleksi" class="label column is-6 mb-1 pb-0 has-text-left">Jenis :</label>
+                        <label for="jenis-koleksi" class="label column is-6 mb-1 pb-0 has-text-left">No. Katalog : </label>
+                      </div>
+                      <div class="field is-grouped">
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Jenis Koleksi / Katalog">
+                        </div>
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Nomor Katalog">
+                        </div>
+                      </div>
+                      <div class="columns is-mobile mb-0">
+                        <label for="jenis-koleksi" class="label column is-6 mb-1 pb-0 has-text-left">Subjek :</label>
+                        <label for="jenis-koleksi" class="label column is-6 mb-1 pb-0 has-text-left">Kode Klasifikasi : </label>
+                      </div>
+                      <div class="field is-grouped">
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Jenis Koleksi / Katalog">
+                        </div>
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Nomor Katalog">
+                        </div>
+                      </div>
+                      <div class="columns is-mobile mb-0">
+                        <label for="jenis-koleksi" class="label column is-4 mb-1 pb-0 has-text-left">Pengarang :</label>
+                        <label for="jenis-koleksi" class="label column is-4 mb-1 pb-0 has-text-left">Penerbit : </label>
+                        <label for="jenis-koleksi" class="label column is-4 mb-1 pb-0 has-text-left">Penyunting : </label>
+                      </div>
+                      <div class="field is-grouped">
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Nama Pengarang">
+                        </div>
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Penerbit">
+                        </div>
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Penyunting">
+                        </div>
+                      </div>
+                      <div class="columns is-mobile mb-0">
+                        <label for="jenis-koleksi" class="label column is-6 mb-1 pb-0 has-text-left">Lokasi :</label>
+                        <label for="jenis-koleksi" class="label column is-6 mb-1 pb-0 has-text-left">Tahun :</label>
+                      </div>
+                      <div class="field is-grouped">
+                        <div class="control is-expanded">
+                          <input type="text" class="input" placeholder="Lokasi Koleksi">
+                        </div>
+                        <div class="control is-expanded">
+                          <input type="number" class="input" placeholder="Tahun Terbit">
+                        </div>
+                      </div>
+                    </form>
                   </section>
 
                   <footer class="modal-card-foot is-flex-direction-column">
                     <div class="buttons">
                       <button class="button is-success">Cari</button>
-                      <button class="button is-danger" onclick="closeModal()">
+                      <button class="button is-danger" onclick="closeModalAdvSearch()">
                         Batal
                       </button>
                     </div>
@@ -139,7 +241,7 @@
                     <span class="icon is-small">
                       <i class="fas fa-home" aria-hidden="true"></i>
                     </span>
-                    <span>Open Library</span>
+                    <span>Beranda</span>
                   </a>
                 </li>
                 <li data-target="tab-katalog">
@@ -178,28 +280,213 @@
       <div id="tab-contents" class="container px-5">
         <section id="tab-home" class="pb-5">
           <div class="container is-widescreen">
-            <h1 class="is-size-1 has-text-centered">Home!</h1>
-            <p class="has-text-centered">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
-              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
-              tempore animi exercitationem illum? Quos officiis magnam quae eius
-              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
-              odio libero totam quod labore! Id provident sit impedit debitis a,
-              est natus dolore vitae, deserunt rerum iure numquam cumque non?
-              Beatae numquam consectetur commodi aspernatur eaque dolorum
-              accusantium porro voluptatum perferendis? Sint dolor tempora
-              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
-              voluptates sint. Nam aspernatur pariatur nihil maiores similique
-              facilis ipsum?
-            </p>
+            <div class="columns p-3">
+              <div class="column">
+                <figure class="image is-5by3 mb-1">
+                  <img
+                    src="./assets/images/openlibrary.jpeg"
+                    class="box"
+                    style="object-fit: cover"
+                    alt=""
+                  />
+                </figure>
+                <figcaption class="has-text-centered is-size-7 is-italic">
+                  Open Library - Telkom University
+                </figcaption>
+              </div>
+              <div class="column is-mobile pt-0">
+                <div class="content">
+                  <h1 class="title is-size-3 py-2 mb-0 has-text-centered">
+                    Open Library Telkom
+                  </h1>
+
+                  <hr class="p-0 m-0" />
+                  <p class="has-text-justified pt-1">
+                    <strong>Telkom University Open Library</strong> adalah brand untuk Unit Sumber Daya Keilmuan & Perpustakaan (SDK & Perpustakaan) Telkom University yang berada di bawah Wakil Rektor I. Telkom University Open Library memiliki visi "Menjadi leader dari pusat ilmu dan pengetahuan berbasis teknologi informasi".
+                    Untuk mencapai visi tersebut, maka SDK & Perpustakaan Telkom University mengusung misi sebagai berikut:
+                    <ol>
+                      <li>Berperan aktif dalam melakukan akuisisi pengetahuan, mengelola pengetahuan, dan berbagi pengetahuan.</li>
+                      <li>Berperan aktif dalam meningkatkan minat baca dan tulis di masyarakat</li>
+                      <li>Bekerja sama dengan semua instansi dalam pengembangan ilmu dan pengetahuan.</li>
+                    </ol>
+                   
+                  </p>
+                  <a
+                    href="#"
+                    class="button is-danger is-outlined is-pulled-right"
+                  >
+                    Selengkapnya
+                  </a>
+                </div>
+              </div>
+            </div>
+            <hr class="" />
+            <h1 class="title has-text-centered">Berita & Event Open Library</h1>
+            <div class="columns has-text-centered">
+              <div class="column">
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-5by3">
+                      <img
+                        src="/assets/images/berita.jpg"
+                        alt="Gambar Berita"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content px-5 py-2">
+                    <div class="media mb-1">
+                      <div class="media-left mr-1">
+                        <figure class="image is-32x32">
+                          <img src="./assets/icon/oplib.png" alt="" />
+                        </figure>
+                      </div>
+                      <div class="has-text-left">
+                        <p class="title is-6">Selamat Datang di Open Library</p>
+                        <p class="subtitle user-position">
+                          Administrator |
+                          <span class="has-text-weight-bold"
+                            >11 Agustus 2021</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="m-0 has-background-grey-lighter" />
+                    <div class="content mb-1">
+                      <p class="has-text-justified">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Eius earum repellat excepturi molestiae quod
+                        doloremque minima eos rem fugiat, vero cumque, fugit
+                        expedita labore praesentium voluptates? Optio deleniti
+                        quam eum amoris due tope akseno kompelt...
+                      </p>
+                    </div>
+                    <div class="card-footer pb-3">
+                      <a class="card-footer-item button is-primary mr-1">
+                        <span>Selengkapnya..</span>
+                      </a>
+                      <a class="card-footer-item button is-info ml-1 is-outlined ">
+                        <span class="icon is-small">
+                          <i class="fas fa-share-square"></i>
+                        </span>
+                        <span>Bagikan</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-5by3">
+                      <img
+                        src="/assets/images/berita.jpg"
+                        alt="Gambar Berita"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content px-5 py-2">
+                    <div class="media mb-1">
+                      <div class="media-left mr-1">
+                        <figure class="image is-32x32">
+                          <img src="./assets/icon/oplib.png" alt="" />
+                        </figure>
+                      </div>
+                      <div class="has-text-left">
+                        <p class="title is-6">
+                          Layanan yang ada di Open Library
+                        </p>
+                        <p class="subtitle user-position">
+                          Administrator |
+                          <span class="has-text-weight-bold"
+                            >1 September 2021</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="m-0 has-background-grey-lighter" />
+                    <div class="content mb-1">
+                      <p class="has-text-justified">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Eius earum repellat excepturi molestiae quod
+                        doloremque minima eos rem fugiat, vero cumque, fugit
+                        expedita labore praesentium voluptates? Optio deleniti
+                        quam eum amoris due tope akseno kompelt...
+                      </p>
+                    </div>
+                    <div class="card-footer pb-3">
+                      <a class="card-footer-item button is-primary mr-1">
+                        <span>Selengkapnya..</span>
+                      </a>
+                      <a class="card-footer-item button is-info ml-1 is-outlined">
+                        <span class="icon is-small">
+                          <i class="fas fa-share-square"></i>
+                        </span>
+                        <span>Bagikan</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-5by3">
+                      <img
+                        src="/assets/images/berita.jpg"
+                        alt="Gambar Berita"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content px-5 py-2">
+                    <div class="media mb-1">
+                      <div class="media-left mr-1">
+                        <figure class="image is-32x32">
+                          <img src="./assets/icon/oplib.png" alt="" />
+                        </figure>
+                      </div>
+                      <div class="has-text-left">
+                        <p class="title is-6">Open Library : Literacy Event</p>
+                        <p class="subtitle user-position">
+                          Administrator |
+                          <span class="has-text-weight-bold"
+                            >03 Oktober 2021</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="m-0 has-background-grey-lighter" />
+                    <div class="content mb-1">
+                      <p class="has-text-justified">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Eius earum repellat excepturi molestiae quod
+                        doloremque minima eos rem fugiat, vero cumque, fugit
+                        expedita labore praesentium voluptates? Optio deleniti
+                        quam eum amoris due tope akseno kompelt...
+                      </p>
+                    </div>
+                    <div class="card-footer pb-3">
+                      <a class="card-footer-item button is-primary mr-1">
+                        <span>Selengkapnya..</span>
+                      </a>
+                      <a class="card-footer-item button is-info ml-1 is-outlined">
+                        <span class="icon is-small">
+                          <i class="fas fa-share-square"></i>
+                        </span>
+                        <span>Bagikan</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section id="tab-katalog" class="pb-5 is-hidden">
           <div class="container is-widescreen">
             <h1 class="is-size-1 has-text-centered">Katalog!</h1>
-            <p class="has-text-centered">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+            <p class="subtitle has-text-centered">
+              Akan diisi oleh Koleksi Katalog~ 
+              <p class=" has-text-centered">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
               dignissimos soluta cupiditate sit, expedita itaque ducimus amet
               dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
               tempore animi exercitationem illum? Quos officiis magnam quae eius
@@ -210,69 +497,139 @@
               accusantium porro voluptatum perferendis? Sint dolor tempora
               animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
               voluptates sint. Nam aspernatur pariatur nihil maiores similique
-              facilis ipsum?
+              facilis ipsum?.</p>
             </p>
           </div>
         </section>
         <section id="tab-informasi" class="pb-5 is-hidden">
           <div class="container is-widescreen">
             <h1 class="is-size-1 has-text-centered">Informasi!</h1>
-            <p class="has-text-centered">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
-              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
-              tempore animi exercitationem illum? Quos officiis magnam quae eius
-              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
-              odio libero totam quod labore! Id provident sit impedit debitis a,
-              est natus dolore vitae, deserunt rerum iure numquam cumque non?
-              Beatae numquam consectetur commodi aspernatur eaque dolorum
-              accusantium porro voluptatum perferendis? Sint dolor tempora
-              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
-              voluptates sint. Nam aspernatur pariatur nihil maiores similique
-              facilis ipsum?
+            <p class="subtitle has-text-centered">
+              Akan diisi oleh Koleksi Informasi dan Infografis~ 
+              <p class=" has-text-centered">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum in nibh eu metus iaculis lobortis. Sed maximus volutpat tortor, sit amet facilisis nibh vestibulum eu. Morbi vel tortor urna. Duis eget diam mollis leo elementum varius eget ut tortor. Etiam bibendum ex ac urna faucibus ultricies. Vestibulum et lacus egestas, tempor justo et, pellentesque felis. Donec diam risus, dignissim in interdum a, tempus sit amet ligula. Nam sit amet vestibulum sapien, ac luctus ante. Suspendisse sed ultricies tellus. Pellentesque lacus odio, faucibus in aliquet non, maximus vitae diam. Quisque vitae turpis lobortis, pretium diam at, semper purus.</p>
             </p>
           </div>
         </section>
         <section id="tab-layanan" class="pb-5 is-hidden">
           <div class="container is-widescreen">
             <h1 class="is-size-1 has-text-centered">Layanan!</h1>
-            <p class="has-text-centered">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
-              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
-              tempore animi exercitationem illum? Quos officiis magnam quae eius
-              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
-              odio libero totam quod labore! Id provident sit impedit debitis a,
-              est natus dolore vitae, deserunt rerum iure numquam cumque non?
-              Beatae numquam consectetur commodi aspernatur eaque dolorum
-              accusantium porro voluptatum perferendis? Sint dolor tempora
-              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
-              voluptates sint. Nam aspernatur pariatur nihil maiores similique
-              facilis ipsum?
+            <p class="subtitle has-text-centered">
+              Akan diisi oleh Jenis Layanan~ 
+              <p class=" has-text-centered">Morbi rhoncus, sapien hendrerit mollis posuere, arcu diam convallis eros, at fringilla dolor nisl sit amet ex. Pellentesque nec felis molestie, venenatis magna eget, tristique neque. Aenean tincidunt tempus blandit. Aliquam tincidunt nibh mi, sed vulputate arcu rutrum nec. Nunc laoreet nec neque nec hendrerit. Suspendisse vel mauris in nibh facilisis molestie. Nulla eu massa molestie, iaculis nisl ut, commodo arcu. Phasellus tempor, orci ac porta tristique, lacus ipsum rhoncus est, a pharetra turpis elit sed nibh. Nulla sed justo eget lorem aliquet luctus. Vestibulum sit amet ultricies sapien, eu tempus orci. Sed rhoncus ligula vitae massa placerat, eu rutrum neque vestibulum. Pellentesque ut quam vulputate, pharetra justo sed, pharetra magna.</p>
             </p>
           </div>
         </section>
       </div>
     </main>
 
-    <footer class="footer py-4 has-background-dark has-text-white">
-      <div class="content columns">
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
+    <footer class="footer py-4 has-background-dark has-text-white mt-5">
+      <div class="container px-5">
+        <div class="columns">
+          <div class="column is-centered">
+            <img
+              src="/assets/icon/oplib.png"
+              class="image is-64x64 center-thing"
+              alt=""
+            />
+            <div class="has-text-centered">
+              <p class="title color-footer">Open Library</p>
+              <p class="subtitle color-footer">Telkom University</p>
+            </div>
+          </div>
+          <hr class="m-0 has-background-grey" />
+          <div class="column has-text-white">
+            <h1 class="title is-size-4 color-footer has-text-centered">
+              Lokasi Perpustakaan
+            </h1>
+
+            <p
+              class="
+                subtitle
+                is-size-6
+                has-text-weight-semibold
+                color-footer
+                mb-0
+              "
+            >
+              Manterawu Lt.5
+            </p>
+            <p class="is-size-7 pb-2">
+              Jl. Telekomunikasi - Ters. Buah Batu Bandung 40257 Indonesia
+            </p>
+            <p
+              class="
+                subtitle
+                is-size-6
+                has-text-weight-semibold
+                color-footer
+                mb-0
+              "
+            >
+              Kampus Geger Kalong
+            </p>
+            <p class="is-size-7 pb-2">
+              Jl. Geger Kalong No. 1 Bandung Indonesia
+            </p>
+            <p
+              class="
+                subtitle
+                is-size-6
+                has-text-weight-semibold
+                color-footer
+                mb-0
+              "
+            >
+              Jam Operasional
+            </p>
+            <p class="is-size-7">Senin - Jum'at : 09.00 - 15.00</p>
+            <p class="is-size-7">Sabtu : Tutup selama Pandemi</p>
+          </div>
+          <hr class="m-0 has-background-grey" />
+          <div class="column">
+            <h1 class="title color-footer is-size-4 has-text-centered mb-1">
+              Kontak Kami
+            </h1>
+            <p class="subtitle color-footer is-size-6 my-0">
+              <span class="icon"> <i class="fab fa-whatsapp has-text-success"></i> </span>: 
+              <a class="has-text-success" href="tel:+6281280000110">+62 812-8000-0110</a>
+            </p>
+            <p class="subtitle color-footer is-size-6 my-0">
+              <span class="icon"> <i class="fas fa-envelope-open-text has-text-warning"></i> </span>: 
+              <a class="has-text-warning" href="mailto:library@telkomuniversity.ac.id " target="_blank">library@telkomuniversity.ac.id</a>
+            </p>
+            <p class="subtitle color-footer is-size-6 my-0">
+              <span class="icon"> <i class="fab fa-instagram has-text-danger"></i> </span>: 
+              <a href="https://www.instagram.com/openlibrary.telu/" target="_blank" class="has-text-danger">@openlibrary.telu</a>
+            </p>
+            <p class="subtitle color-footer is-size-6 my-0">
+              <span class="icon"> <i class="fab fa-facebook has-text-info"></i> </span>: 
+              <a href="https://www.facebook.com/TelkomOpenLibrary" target="_blank" class="has-text-info">Telkom University Openlibrary</a>
+            </p>
+            <p class="subtitle color-footer is-size-6 my-0">
+              <span class="icon"> <i class="fab fa-line has-text-primary"></i> </span>: 
+              <a href="https://line.me/ti/p/~@openlibrary.telu" class="has-text-primary">@openlibrary.telu</a>
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="has-text-centered">
+      <div class="has-text-centered mt-6">
         <p>
-          <span id="jam" class="is-size-4"></span>
+          <span id="jam" class="is-size-3 has-text-weight-bold"></span>
         </p>
         <p>
-          <span id="tanggal" class="is-size-5"></span>
+          <span id="tanggal" class="is-size-6"></span>
         </p>
         <p class="is-size-7">
           &copy;
           <span id="year"></span> Open Library | Telkom University | Frontpage
-          by chrisnaadhi
+          by
+          <a
+            href="https://www.linkedin.com/in/chrisnaadhi/"
+            class="has-text-grey-lighter is-underlined"
+            target="_blank"
+            >chrisnaadhi</a
+          >
         </p>
       </div>
     </footer>

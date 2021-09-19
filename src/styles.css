@@ -4,13 +4,30 @@
 a {
   text-decoration: none;
 }
+
 .title,
 .subtitle {
   font-family: "Ubuntu", sans-serif;
 }
 
+.label-200px {
+  width: 50px;
+}
+
+.color-footer {
+  color: white;
+}
+
 .judul {
   font-family: "Ubuntu", sans-serif;
+}
+
+.user-position {
+  font-size: 0.65rem;
+}
+
+.center-thing {
+  margin: 0 auto;
 }
 
 .hero.has-background {

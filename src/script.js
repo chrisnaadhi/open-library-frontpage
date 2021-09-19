@@ -4,22 +4,20 @@ const navbarMenu = document.querySelector('#nav-links');
 
 burgerIcon.addEventListener('click', () => {
   navbarMenu.classList.toggle('is-active');
+  document.addEventListener('mouseup', (e) => {
+    if (e.target != navbarMenu && e.target.parentNode != navbarMenu) {
+      navbarMenu.classList.remove('is-active');
+  }
 })
-
-// window.addEventListener('mouseup', (e) => {
-//   if (e.target != navbarMenu && e.target.parentNode != navbarMenu) {
-//     navbarMenu.classList.remove('is-active');
-//   }
-// })
+})
 
 // Search Box
 const searchBox = document.querySelector('#searchText');
 const searchIcon = document.querySelector('#searchIcon');
-const advSearch = document.querySelector('#advancedSearch');
 
 const searchClick = (e) => {
   let value = searchBox.value;
-  if (value.length === 0) {
+  if (value === "") {
     alert("Kata Pencarian tidak boleh Kosong!")
   } else {
     alert(`${value} sedang dicari..`);
@@ -35,25 +33,29 @@ searchBox.addEventListener("keypress", (e) => {
   }
 })
 
-// Modal
-const modalBg = document.querySelector('.modal-background');
+// Modal Advanced Search
+const advSearch = document.querySelector('#advancedSearch');
 const modalClose = document.querySelector('.modal-close');
-const modal = document.querySelector('.modal');
+const advSearchModal = document.querySelector('#advSearch');
 
 advSearch.addEventListener("click", () => {
-  modal.classList.add('is-active');
+  advSearchModal.classList.add('is-active');
 })
 
-modalBg.addEventListener('click', () => {
-  modal.classList.remove('is-active');
+const closeModalAdvSearch = () => {
+  advSearchModal.classList.remove('is-active')
+}
+
+// Modal Login
+const modalLogin = document.querySelector('#modalLogin');
+const loginBtn = document.querySelector('#loginBtn');
+
+loginBtn.addEventListener("click", () => {
+  modalLogin.classList.add('is-active');
 })
 
-modalClose.addEventListener('click', () => {
-  modal.classList.remove('is-active');
-})
-
-const closeModal = () => {
-  modal.classList.remove('is-active')
+const closeModalLogin = () => {
+  modalLogin.classList.remove('is-active');
 }
 
 // Tabs
@@ -85,6 +87,7 @@ const dateEl = document.querySelector('#tanggal');
 const hourEl = document.querySelector('#jam');
 
 const date = new Date();
+const hari = date.toLocaleString('id-id', {weekday: 'long'})
 const tanggal = date.getDate();
 const bulan = date.toLocaleString('id-id', {month: 'long'});
 const thisYear = new Date().getFullYear();
@@ -109,4 +112,4 @@ const cekJam = (i) => {
 }
 
 yearEl.innerHTML = thisYear;
-dateEl.innerHTML = `${tanggal} ${bulan} ${thisYear}`;
+dateEl.innerHTML = `${hari}, ${tanggal} ${bulan} ${thisYear}`;
