@@ -1,4 +1,3 @@
-<p align="center">
 ### Frontpage for Open Library
 
 Project Latihan Front-End untuk situs [Open Library Telkom](https://openlibrary.telkomuniversity.ac.id/)
@@ -7,7 +6,6 @@ Project for Learning Front-End
 
 ![Logo](https://4.bp.blogspot.com/-LMNbV2OAdrU/XCwyg7tGeFI/AAAAAAAAAbs/H9dd7VM5bOA6zFVodb2LY2CBKbG9NPRMwCLcBGAs/s1600/Open-Library-Telkom-University.png)
 
-</p>
 ## Demo
 
 via Github Pages

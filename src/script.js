@@ -62,7 +62,7 @@ const closeModalLogin = () => {
 
 const tabs = document.querySelectorAll('.tabs li');
 const tabContents = document.querySelectorAll('#tab-contents > section')
-console.log(tabs)
+// console.log(tabs)
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
