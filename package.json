@@ -4,8 +4,8 @@
   "description": "Open Library FrontPage ReDesign Project",
   "main": "index.js",
   "scripts": {
-    "build-watch": "sass --watch --no-source-map src/sass/custom.scss:src/styles.css",
-    "build": "sass --no-source-map src/sass/custom.scss:src/styles.css"
+    "build-watch": "sass --watch --no-source-map src/sass/_custom.scss:src/styles.css",
+    "build": "sass --no-source-map src/sass/_custom.scss:src/styles.css"
   },
   "repository": {
     "type": "git",
