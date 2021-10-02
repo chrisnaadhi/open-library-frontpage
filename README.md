@@ -1,11 +1,13 @@
-# Redesigned Frontpage for Open Library
+<p align="center">
+# Frontpage for Open Library
 
-Project Desain Ulang (Re-Design) untuk situs [Open Library Telkom](https://openlibrary.telkomuniversity.ac.id/)
+Project Latihan Front-End untuk situs [Open Library Telkom](https://openlibrary.telkomuniversity.ac.id/)
 
 Project for Learning Front-End
 
 ![Logo](https://4.bp.blogspot.com/-LMNbV2OAdrU/XCwyg7tGeFI/AAAAAAAAAbs/H9dd7VM5bOA6zFVodb2LY2CBKbG9NPRMwCLcBGAs/s1600/Open-Library-Telkom-University.png)
 
+</p>
 ## Demo
 
 via Github Pages
@@ -13,6 +15,8 @@ via Github Pages
 or
 
 [Click Here](https://chrisnaadhi.github.io/open-library-frontpage/)
+
+or install it locally
 
 ## Lisensi
 

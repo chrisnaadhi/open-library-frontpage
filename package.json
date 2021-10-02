@@ -1,0 +1,21 @@
+{
+  "name": "oplib",
+  "version": "1.0.0",
+  "description": "Open Library FrontPage ReDesign Project",
+  "main": "index.js",
+  "scripts": {
+    "build-watch": "sass --watch --no-source-map src/sass/custom.scss:src/styles.css",
+    "build": "sass --no-source-map src/sass/custom.scss:src/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisnaadhi/open-library-frontpage.git"
+  },
+  "author": "Chrisna Adhi Pranoto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisnaadhi/open-library-frontpage/issues"
+  },
+  "homepage": "https://github.com/chrisnaadhi/open-library-frontpage#readme",
+  "devDependencies": {}
+}

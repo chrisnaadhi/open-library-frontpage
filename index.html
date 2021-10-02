@@ -9,15 +9,16 @@
       href="./assets/icon/oplib.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/styles.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <title>Open Library</title>
   </head>
-
+  <!-- BODY -->
   <body onload="jamSekarang()">
+    <!-- Header & Navbar -->
     <header>
       <nav
         class="navbar is-fixed-top is-white"
@@ -64,9 +65,9 @@
           </div>
         </div>
       </nav>
-      <div class="modal px-4" id="modalLogin">
+      <div class="modal" id="modalLogin">
         <div class="modal-background" onclick="closeModalLogin()"></div>
-        <div class="modal-card has-background-white">
+        <div class="modal-card">
           <header class="modal-card-head">
             <p class="modal-card-title has-text-centered">Login</p>
             <button class="delete" aria-label="close" onclick="closeModalLogin()"></button>
@@ -89,6 +90,8 @@
                 </span>
               </p>
             </div>
+          </section>
+          <footer class="modal-card-foot">
             <div class="field is-grouped is-pulled-right">
               <p class="control">
                 <button class="button is-success">
@@ -101,10 +104,12 @@
                 </button>
               </p>
             </div>
-          </section>
+          </footer>
         </div>
       </div>
     </header>
+
+    <!-- Main Content -->
 
     <main>
       <section class="hero is-halfheight is-dark has-background mt-6">
@@ -147,7 +152,7 @@
 
               <div class="modal has-text-dark" id="advSearch">
                 <div class="modal-background" onclick="closeModalAdvSearch()"></div>
-                <div class="modal-card has-background-white search-modal">
+                <div class="modal-card search-modal">
                   <header class="modal-card-head">
                     <p class="modal-card-title judul p-0">Pencarian Spesifik</p>
                     <button
@@ -170,7 +175,14 @@
                       </div>
                       <div class="field is-grouped">
                         <div class="control is-expanded">
-                          <input type="text" class="input" placeholder="Jenis Koleksi / Katalog">
+                          <div class="select is-fullwidth">
+                            <select>
+                              <option value="default">Pilih Jenis Katalog</option>
+                              <option value="buku">Buku</option>
+                              <option value="ebook">E-Book</option>
+                              <option value="ta">Tugas Akhir</option>
+                            </select>
+                          </div>
                         </div>
                         <div class="control is-expanded">
                           <input type="text" class="input" placeholder="Nomor Katalog">
@@ -236,7 +248,7 @@
           <div class="tabs is-centered is-medium is-size-7-mobile is-boxed">
             <div class="container">
               <ul>
-                <li class="is-active" data-target="tab-home">
+                <li data-target="tab-home">
                   <a>
                     <span class="icon is-small">
                       <i class="fas fa-home" aria-hidden="true"></i>
@@ -244,7 +256,7 @@
                     <span>Beranda</span>
                   </a>
                 </li>
-                <li data-target="tab-katalog">
+                <li class="is-active" data-target="tab-katalog">
                   <a>
                     <span class="icon is-small">
                       <i class="fas fa-book" aria-hidden="true"></i>
@@ -278,7 +290,7 @@
       </section>
 
       <div id="tab-contents" class="container px-5">
-        <section id="tab-home" class="pb-5">
+        <section id="tab-home" class="pb-5 is-hidden">
           <div class="container is-widescreen">
             <div class="columns p-3">
               <div class="column">
@@ -322,7 +334,7 @@
             </div>
             <hr class="" />
             <h1 class="title has-text-centered">Berita & Event Open Library</h1>
-            <div class="columns has-text-centered">
+            <div class="columns has-text-centered is-desktop is-flex-wrap-wrap">
               <div class="column">
                 <div class="card">
                   <div class="card-image">
@@ -445,7 +457,7 @@
                         </figure>
                       </div>
                       <div class="has-text-left">
-                        <p class="title is-6">Open Library : Literacy Event</p>
+                        <p class="title is-6">Open Library : Literacy Event 2021</p>
                         <p class="subtitle user-position">
                           Administrator |
                           <span class="has-text-weight-bold"
@@ -478,27 +490,70 @@
                   </div>
                 </div>
               </div>
+              <div class="column">
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-5by3">
+                      <img
+                        src="./assets/images/berita.jpg"
+                        alt="Gambar Berita"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content px-5 py-2">
+                    <div class="media mb-1">
+                      <div class="media-left mr-1">
+                        <figure class="image is-32x32">
+                          <img src="./assets/icon/oplib.png" alt="" />
+                        </figure>
+                      </div>
+                      <div class="has-text-left">
+                        <p class="title is-6">Selamat Datang di Open Library</p>
+                        <p class="subtitle user-position">
+                          Administrator |
+                          <span class="has-text-weight-bold"
+                            >11 Agustus 2021</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="m-0 has-background-grey-lighter" />
+                    <div class="content mb-1">
+                      <p class="has-text-justified">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Eius earum repellat excepturi molestiae quod
+                        doloremque minima eos rem fugiat, vero cumque, fugit
+                        expedita labore praesentium voluptates? Optio deleniti
+                        quam eum amoris due tope akseno kompelt...
+                      </p>
+                    </div>
+                    <div class="card-footer pb-3">
+                      <a class="card-footer-item button is-primary mr-1">
+                        <span>Selengkapnya..</span>
+                      </a>
+                      <a class="card-footer-item button is-info ml-1 is-outlined ">
+                        <span class="icon is-small">
+                          <i class="fas fa-share-square"></i>
+                        </span>
+                        <span>Bagikan</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        <section id="tab-katalog" class="pb-5 is-hidden">
-          <div class="container is-widescreen">
-            <h1 class="is-size-1 has-text-centered">Katalog!</h1>
+        <section id="tab-katalog" class="pb-5">
+          <div class="container is-widescreen mt-2">
+            <h1 class="is-size-1 has-text-centered title">Koleksi Katalog</h1>
             <p class="subtitle has-text-centered">
-              Akan diisi oleh Koleksi Katalog~ 
-              <p class=" has-text-centered">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-              dignissimos soluta cupiditate sit, expedita itaque ducimus amet
-              dicta minus hic ipsa. Esse magni ullam voluptas quisquam commodi
-              tempore animi exercitationem illum? Quos officiis magnam quae eius
-              assumenda recusandae incidunt ut quas dolor perferendis quidem, ab
-              odio libero totam quod labore! Id provident sit impedit debitis a,
-              est natus dolore vitae, deserunt rerum iure numquam cumque non?
-              Beatae numquam consectetur commodi aspernatur eaque dolorum
-              accusantium porro voluptatum perferendis? Sint dolor tempora
-              animi? Cum dolor nam at eaque velit, mollitia delectus fugiat
-              voluptates sint. Nam aspernatur pariatur nihil maiores similique
-              facilis ipsum?.</p>
+              Katalog Open Library Telkom
             </p>
+            <div class="columns">
+              <div class="column"><p class="has-text-centered subtitle">Hello</p></div>
+              <div class="column"><p class="has-text-centered subtitle">World</p></div>
+            </div>
           </div>
         </section>
         <section id="tab-informasi" class="pb-5 is-hidden">

@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "../bulma/bulma.sass";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+a {
+  text-decoration: none;
+}
+
+.title,
+.subtitle {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.label-200px {
+  width: 50px;
+}
+
+.color-footer {
+  color: white;
+}
+
+.judul {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.user-position {
+  font-size: 0.65rem;
+}
+
+.center-thing {
+  margin: 0 auto;
+}
+
+.hero.has-background {
+  position: relative;
+  overflow: hidden;
+}
+.hero-background {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+.hero-background.is-transparent {
+  opacity: 0.1;
+}
+
+.login-btn {
+  background-color: royalblue;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: rgb(41, 80, 197);
+}
+
+.search-modal {
+  height: 75vh;
+}
