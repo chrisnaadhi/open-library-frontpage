@@ -1,4 +1,4 @@
-### Frontpage for Open Library
+# Frontpage for Open Library
 
 Project Latihan Front-End untuk situs [Open Library Telkom](https://openlibrary.telkomuniversity.ac.id/)
 
@@ -14,7 +14,17 @@ or
 
 [Click Here](https://chrisnaadhi.github.io/open-library-frontpage/)
 
-or install it locally with Sass CLI for Customization
+or install it locally with NodeJS for customization
+
+```bash
+  git clone https://github.com/chrisnaadhi/open-library-frontpage.git
+```
+
+then install dependencies
+
+```bash
+  npm install
+```
 
 ## Lisensi
 
