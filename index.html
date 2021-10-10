@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
     <title>Open Library</title>
   </head>
   <!-- BODY -->
@@ -65,9 +66,9 @@
           </div>
         </div>
       </nav>
-      <div class="modal" id="modalLogin">
+      <div class="modal modal-fx-superScaled" id="modalLogin">
         <div class="modal-background" onclick="closeModalLogin()"></div>
-        <div class="modal-card">
+        <div class="modal-card modal-content">
           <header class="modal-card-head">
             <p class="modal-card-title has-text-centered">Login</p>
             <button class="delete" aria-label="close" onclick="closeModalLogin()"></button>
@@ -150,9 +151,9 @@
                 >Advanced Search</a
               >
 
-              <div class="modal has-text-dark" id="advSearch">
+              <div class="modal has-text-dark modal-fx-3dRotateFromBottom" id="advSearch">
                 <div class="modal-background" onclick="closeModalAdvSearch()"></div>
-                <div class="modal-card search-modal">
+                <div class="modal-card search-modal modal-content">
                   <header class="modal-card-head">
                     <p class="modal-card-title judul p-0">Pencarian Spesifik</p>
                     <button
@@ -555,20 +556,55 @@
                 <div class="box full-height">
                   <div class="columns">
                     <div class="column">
+                      <figure class="image is-4by5">
+                        <img src="./assets/images/books/html.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="column">
                       <span class="tag is-success">Rekomendasi</span>
-                      <h4 class="subtitle has-text-right">Buku Rekomendasi</h4>
-                      <p class="has-text-right">
+                      <h4 class="subtitle has-text-left my-1">Buku Rekomendasi</h4>
+                      <p class="has-text-left">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eligendi sint quidem non quibusdam natus quasi magnam at deserunt nesciunt.
                       </p>
                     </div>
-                    <div class="column"></div>
                   </div>
                 </div>
               </div>
               <div class="column">
                 <div class="box full-height">
-                  <span class="tag is-danger">Terpopuler</span>
-                  <p class="subtitle">asdadsdsa</p>
+                  <div class="columns">
+                    <div class="column">
+                      <figure class="image is-4by5">
+                        <img src="./assets/images/books/css.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="column">
+                      <span class="tag is-danger">Terpopuler</span>
+                      <h4 class="subtitle has-text-left my-1">Buku Populer</h4>
+                      <p class="has-text-left">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eligendi sint quidem non quibusdam natus quasi magnam at deserunt nesciunt.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="box full-height">
+                  <div class="columns">
+                    <div class="column">
+                      <figure class="image is-4by5">
+                        <img src="./assets/images/books/js.png" alt="">
+                      </figure>
+                      
+                    </div>
+                    <div class="column">
+                      <span class="tag is-info">Terbaru</span>
+                      <h4 class="subtitle has-text-left my-1">Buku Baru</h4>
+                      <p class="has-text-left">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eligendi sint quidem non quibusdam natus quasi magnam at deserunt nesciunt.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -707,6 +743,8 @@
       </div>
     </footer>
 
+    <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
     <script src="./src/script.js"></script>
+    
   </body>
 </html>
