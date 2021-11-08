@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-watch": "sass --watch --no-source-map src/sass/styles.scss:src/styles.css",
-    "build": "sass --no-source-map src/sass/styles.scss:src/styles.css",
-    "css-build": "node-sass --omit-source-map-url src/sass/styles.scss src/styles.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "build": "sass --no-source-map src/sass/styles.scss:src/styles.css"
   },
   "repository": {
     "type": "git",
