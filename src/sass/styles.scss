@@ -62,3 +62,14 @@ a {
 .full-height {
   height: 100%;
 }
+
+.gradient-text {
+  background: linear-gradient(90deg, #00F260, #0575E6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-card.modal-content {
+  padding: 0 15px;
+}

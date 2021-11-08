@@ -78,7 +78,7 @@
               <p class="control has-icons-left has-icons-right">
                 <input class="input" type="text" placeholder="Username">
                 <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
+                  <i class="fas fa-user"></i>
                 </span>
                 
               </p>
@@ -121,7 +121,7 @@
         />
         <div class="hero-body">
           <div class="container has-text-centered">
-            <h1 class="title is-1 is-size-2-mobile">Selamat Datang di Open Library</h1>
+            <h1 class="title is-1 is-size-2-mobile gradient-text">Selamat Datang di Open Library</h1>
             <h3 class="subtitle is-size-6-mobile">
               Cari cepat koleksi dari Katalog Kami :
             </h3>
@@ -151,9 +151,9 @@
                 >Advanced Search</a
               >
 
-              <div class="modal has-text-dark modal-fx-3dRotateFromBottom" id="advSearch">
+              <div class="modal has-text-dark modal-fx-slideBottom" id="advSearch">
                 <div class="modal-background" onclick="closeModalAdvSearch()"></div>
-                <div class="modal-card search-modal modal-content">
+                <div class="modal-card search-modal modal-content" id="cardAdv">
                   <header class="modal-card-head">
                     <p class="modal-card-title judul p-0">Pencarian Spesifik</p>
                     <button
@@ -309,7 +309,7 @@
               </div>
               <div class="column is-mobile pt-0">
                 <div class="content">
-                  <h1 class="title is-size-3 py-2 mb-0 has-text-centered">
+                  <h1 class="title is-size-3 py-2 mb-0 has-text-centered gradient-text">
                     Open Library Telkom
                   </h1>
 
@@ -334,7 +334,7 @@
               </div>
             </div>
             <hr class="" />
-            <h1 class="title has-text-centered">Berita & Event Open Library</h1>
+            <h1 class="title has-text-centered gradient-text">Berita & Event Open Library</h1>
             <div class="columns has-text-centered is-desktop is-flex-wrap-wrap">
               <div class="column">
                 <div class="card">
@@ -491,63 +491,12 @@
                   </div>
                 </div>
               </div>
-              <div class="column">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-5by3">
-                      <img
-                        src="./assets/images/berita.jpg"
-                        alt="Gambar Berita"
-                      />
-                    </figure>
-                  </div>
-                  <div class="card-content px-5 py-2">
-                    <div class="media mb-1">
-                      <div class="media-left mr-1">
-                        <figure class="image is-32x32">
-                          <img src="./assets/icon/oplib.png" alt="" />
-                        </figure>
-                      </div>
-                      <div class="has-text-left">
-                        <p class="title is-6">Selamat Datang di Open Library</p>
-                        <p class="subtitle user-position">
-                          Administrator |
-                          <span class="has-text-weight-bold"
-                            >11 Agustus 2021</span
-                          >
-                        </p>
-                      </div>
-                    </div>
-                    <hr class="m-0 has-background-grey-lighter" />
-                    <div class="content mb-1">
-                      <p class="has-text-justified">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Eius earum repellat excepturi molestiae quod
-                        doloremque minima eos rem fugiat, vero cumque, fugit
-                        expedita labore praesentium voluptates? Optio deleniti
-                        quam eum amoris due tope akseno kompelt...
-                      </p>
-                    </div>
-                    <div class="card-footer pb-3">
-                      <a class="card-footer-item button is-primary mr-1">
-                        <span>Selengkapnya..</span>
-                      </a>
-                      <a class="card-footer-item button is-info ml-1 is-outlined ">
-                        <span class="icon is-small">
-                          <i class="fas fa-share-square"></i>
-                        </span>
-                        <span>Bagikan</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
         <section id="tab-katalog" class="pb-5 is-hidden">
           <div class="container is-widescreen mt-2">
-            <h1 class="is-size-1 has-text-centered title">Koleksi Katalog</h1>
+            <h1 class="is-size-1 has-text-centered title gradient-text">Koleksi Katalog</h1>
             <p class="subtitle has-text-centered">
               Katalog Open Library Telkom
             </p>
@@ -605,11 +554,11 @@
                     </div>
                   </div>
                   <div class="columns has-text-centered">
-                    <div class="column">
-                      <a href="#">Read</a>
+                    <div class="column has-background-info">
+                      <a href="#" class="has-text-white">Read</a>
                     </div>
-                    <div class="column">
-                      <a href="#">Borrow</a>
+                    <div class="column has-background-primary">
+                      <a href="#" class="has-text-white">Borrow</a>
                     </div>
                   </div>
                 </div>

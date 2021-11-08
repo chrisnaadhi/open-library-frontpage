@@ -15,7 +15,7 @@ burgerIcon.addEventListener('click', () => {
 const searchBox = document.querySelector('#searchText');
 const searchIcon = document.querySelector('#searchIcon');
 
-const searchClick = (e) => {
+const searchClick = () => {
   let value = searchBox.value;
   if (value === "") {
     alert("Kata Pencarian tidak boleh Kosong!")
