@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+    <link rel="stylesheet" href="./src/halfmoon-1.1.1/css/halfmoon-variables.min.css">
   </head>
-  <body>
+  <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
+    <!-- Modal's List is here -->
+    
+    <div class="page-wrapper with-navbar with-sidebar">
+      <div class="sticky-alerts"></div>
+      <nav class="navbar">
+        <a href="#" class="mx-10">Dashboard</a>
+      </nav>
+      <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <a href="#" class="sidebar-brand">
+            MyDashboard
+          </a>
+          <div class="sidebar-content">
+            <input type="text" class="form-control" placeholder="Search here..">
+            <div class="mt-10 font-size-12">
+              Press <kbd>shift</kbd> + <kbd>f</kbd> to focus on Search
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <a href="/">Back</a>
+
+    <script src="./src/halfmoon-1.1.1/js/halfmoon.min.js"></script>
   </body>
 </html>
